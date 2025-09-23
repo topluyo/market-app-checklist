@@ -1,0 +1,342 @@
+
+<script src="//hasandelibas.github.io/documenter/documenter.js?disable-html=true&disable-style=true"></script>
+<meta charset="utf8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  documenter.icons["success"]   = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#44CC44" xfill="#75FB4C"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM9.29 16.29 5.7 12.7c-.39-.39-.39-1.02 0-1.41.39-.39 1.02-.39 1.41 0L10 14.17l6.88-6.88c.39-.39 1.02-.39 1.41 0 .39.39.39 1.02 0 1.41l-7.59 7.59c-.38.39-1.02.39-1.41 0z"/></svg>`
+  documenter.icons["waiting"]   = `<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#B7B7B7"><g><path d="M0,0h24v24H0V0z" fill="none"/></g><g><path d="M11.99,2C6.47,2,2,6.48,2,12s4.47,10,9.99,10C17.52,22,22,17.52,22,12S17.52,2,11.99,2z M16,16 c-0.39,0.39-1.02,0.39-1.41,0l-3.29-3.29C11.11,12.52,11,12.27,11,12V8c0-0.55,0.45-1,1-1h0c0.55,0,1,0.45,1,1v3.59l3,3 C16.39,14.98,16.39,15.61,16,16z"/></g></svg>`
+  documenter.icons["error"]     = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#EA3323"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>`
+  documenter.icons["update"]    = `<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#44CCCC"><g><rect fill="none" height="24" width="24"/><rect fill="none" height="24" width="24"/></g><g><g><path d="M12,2C6.48,2,2,6.48,2,12c0,5.52,4.48,10,10,10s10-4.48,10-10 C22,6.48,17.52,2,12,2z M16.54,15.85l-0.69,0.69c-0.39,0.39-1.02,0.39-1.41,0l-3.05-3.05c-1.22,0.43-2.64,0.17-3.62-0.81 c-1.11-1.11-1.3-2.79-0.59-4.1l2.35,2.35l1.41-1.41L8.58,7.17c1.32-0.71,2.99-0.52,4.1,0.59c0.98,0.98,1.24,2.4,0.81,3.62 l3.05,3.05C16.93,14.82,16.93,15.46,16.54,15.85z" fill-rule="evenodd"/></g></g></svg>`
+  documenter.icons["copyright"] = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#EA33F7"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 1H5c-1.1 0-1.99.9-1.99 2L3 15.93c0 .69.35 1.3.88 1.66l7.57 5.04c.34.22.77.22 1.11 0l7.56-5.04c.53-.36.88-.97.88-1.66V3c0-1.1-.9-2-2-2zm-.7 6.7l-7.59 7.59c-.39.39-1.02.39-1.41 0L5.71 11.7c-.39-.39-.39-1.02 0-1.41s1.02-.39 1.41 0L10 13.17l6.88-6.88c.39-.39 1.02-.39 1.41 0s.4 1.02.01 1.41z"/></svg>`
+  documenter.icons["heart"]     = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#EA3323"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M13.35 20.13c-.76.69-1.93.69-2.69-.01l-.11-.1C5.3 15.27 1.87 12.16 2 8.28c.06-1.7.93-3.33 2.34-4.29 2.64-1.8 5.9-.96 7.66 1.1 1.76-2.06 5.02-2.91 7.66-1.1 1.41.96 2.28 2.59 2.34 4.29.14 3.88-3.3 6.99-8.55 11.76l-.1.09z"/></svg>`
+  documenter.icons["trash"]     = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#EA3323"><path d="M292.31-140q-29.83 0-51.07-21.24Q220-182.48 220-212.31V-720h-10q-12.75 0-21.37-8.63-8.63-8.63-8.63-21.38 0-12.76 8.63-21.37Q197.25-780 210-780h150q0-14.69 10.35-25.04 10.34-10.34 25.03-10.34h169.24q14.69 0 25.03 10.34Q600-794.69 600-780h150q12.75 0 21.37 8.63 8.63 8.63 8.63 21.38 0 12.76-8.63 21.37Q762.75-720 750-720h-10v507.69q0 29.83-21.24 51.07Q697.52-140 667.69-140H292.31ZM680-720H280v507.69q0 5.39 3.46 8.85t8.85 3.46h375.38q5.39 0 8.85-3.46t3.46-8.85V-720ZM406.17-280q12.75 0 21.37-8.62 8.61-8.63 8.61-21.38v-300q0-12.75-8.63-21.38-8.62-8.62-21.38-8.62-12.75 0-21.37 8.62-8.61 8.63-8.61 21.38v300q0 12.75 8.62 21.38 8.63 8.62 21.39 8.62Zm147.69 0q12.75 0 21.37-8.62 8.61-8.63 8.61-21.38v-300q0-12.75-8.62-21.38-8.63-8.62-21.39-8.62-12.75 0-21.37 8.62-8.61 8.63-8.61 21.38v300q0 12.75 8.63 21.38 8.62 8.62 21.38 8.62ZM280-720v520-520Z"/></svg>`
+  documenter.icons["plus"]      = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M450-530v90q0 12.77 8.62 21.38Q467.23-410 480-410t21.38-8.62Q510-427.23 510-440v-90h90q12.77 0 21.38-8.62Q630-547.23 630-560t-8.62-21.38Q612.77-590 600-590h-90v-90q0-12.77-8.62-21.38Q492.77-710 480-710t-21.38 8.62Q450-692.77 450-680v90h-90q-12.77 0-21.38 8.62Q330-572.77 330-560t8.62 21.38Q347.23-530 360-530h90ZM241.54-260l-80.08 80.07q-17.07 17.08-39.27 7.74Q100-181.54 100-205.85v-581.84Q100-818 121-839q21-21 51.31-21h615.38Q818-860 839-839q21 21 21 51.31v455.38Q860-302 839-281q-21 21-51.31 21H241.54ZM216-320h571.69q4.62 0 8.46-3.85 3.85-3.84 3.85-8.46v-455.38q0-4.62-3.85-8.46-3.84-3.85-8.46-3.85H172.31q-4.62 0-8.46 3.85-3.85 3.84-3.85 8.46v523.08L216-320Zm-56 0v-480 480Z"/></svg>`
+  documenter.icons["edit"]      = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M200-200h50.46l409.46-409.46-50.46-50.46L200-250.46V-200Zm-23.84 60q-15.37 0-25.76-10.4-10.4-10.39-10.4-25.76v-69.3q0-14.63 5.62-27.89 5.61-13.26 15.46-23.11l506.54-506.31q9.07-8.24 20.03-12.73 10.97-4.5 23-4.5t23.3 4.27q11.28 4.27 19.97 13.58l48.85 49.46q9.31 8.69 13.27 20 3.96 11.31 3.96 22.62 0 12.07-4.12 23.03-4.12 10.97-13.11 20.04L296.46-161.08q-9.85 9.85-23.11 15.46-13.26 5.62-27.89 5.62h-69.3Zm584.22-570.15-50.23-50.23 50.23 50.23Zm-126.13 75.9-24.79-25.67 50.46 50.46-25.67-24.79Z"/></svg>`
+  documenter.when("[documenter-icon]",function(el){
+    if(documenter.icons[el.getAttribute("documenter-icon")]!=null){
+      el.innerHTML = documenter.icons[el.getAttribute("documenter-icon")].split("<svg").join('<svg style="width:1.5em;height:1.5em" ');
+    }else{
+      el.innerHTML = el.getAttribute("documenter-icon")
+    }
+  })
+</script>
+<script>
+
+const APP = {}
+APP._events = [];
+APP.on = function(action,event){ APP._events.push({action,event}) }
+window.addEventListener('message', (event)=>{
+  if (!event.origin.endsWith("topluyo.com")) return;
+  let data = (event.data)
+  if(data.action){
+    APP._events.filter(e=> e.action==data.action ).map(e=>e.event(data.parameters))
+  }
+})
+APP.up = function(action,parameters){
+  let data = {action,parameters,url:location.href}
+  window.parent.postMessage(data,"https://topluyo.com")
+  window.parent.postMessage(data,"https://alfa.topluyo.com")
+  window.parent.postMessage(data,"https://app.topluyo.com")
+}
+
+
+
+function xss(text) {
+  if (typeof text !== "string") return text;
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function htmlRevert(str) {
+  return str
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'");
+}
+
+
+APP.up("<post/list")
+
+let posts = {}
+function CreateOrChange(post){
+  posts[post.id] = post
+  if($('[post-id="'+post.id+'"]')){
+    let postElement = $('[post-id="'+post.id+'"]')
+    $("[change-icon]",postElement).setAttribute("documenter-icon",JSON.parse(htmlRevert(post.text)).icon)
+    $("[change-icon]",postElement).innerHTML = documenter.icons[JSON.parse(htmlRevert(post.text)).icon]
+    $("[space]",postElement).innerHTML = documenter.markdown(xss(JSON.parse(htmlRevert(post.text)).text))
+  }else{
+    $("content").innerHTML += `<item parent-hover post-id="${post.id}" style="--order:${post.id}" flex-x center gap>
+        <div down over padding change-icon documenter-icon="${JSON.parse(htmlRevert(post.text)).icon}"></div>
+        <div space padding>${documenter.markdown(xss(JSON.parse(htmlRevert(post.text)).text))}</div>
+        <div down over hover-show padding documenter-icon="edit"></div>
+        <div down over hover-show padding documenter-icon="trash" onclick="Delete(${post.id});Button.loading(this);"></div>
+      </item>`
+  }
+}
+
+APP.on(">post/list+", function(post){
+  CreateOrChange(post)
+})
+
+APP.on(">post/list", function(posts){
+  posts.map(post=>CreateOrChange(post))
+})
+
+APP.on(">post/list-",function(id){
+  $("[post-id='"+id+"']").remove()
+})
+
+</script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+  body{
+    font-family: "Nunito", system-ui;
+    font-optical-sizing: auto;
+    font-weight:500;
+  }
+  @media (prefers-color-scheme: light) {
+    body {
+      background: #F8F8F8;
+      --back:#F8F8F8;
+      color: #333;
+      --front:#333;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    body {
+      background: #171819;
+      --back:#171819;
+      color: #FFF;
+      --front:#FFF;
+    }
+  }
+  
+  .down, [down]{
+    transition:all .2s;
+  }
+  .down:active, [down]:active{
+    transform:scale(.95);
+  }
+  .flex-x,[flex-x]{
+    display:flex;
+    flex-direction:row;
+  }
+  .flex-cx,[flex-cx]{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content: center;
+  }
+  .flex-sx,[flex-sx]{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+  }
+  .flex-ex,[flex-ex]{
+    display:flex;
+    flex-direction:row;
+  }
+  .flex-ex>*, [flex-ex]>*{
+    flex-basis: 100%;
+  }
+  .flex-y,[flex-y]{
+    display:flex;
+    flex-direction:column;
+  }
+  .flex-cy,[flex-cy]{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content: center;
+  }
+  .center,[center]{
+    align-items:center;
+  }
+  .space ,[space],.flex-1,[flex-1],space{flex:1;}
+  .gap,[gap]{gap:0.5em}
+  .gap-1,[gap-1]{gap:1em}
+  .padding, [padding]{padding:0.5em}
+  [over]:hover{
+    background: #8884;
+    cursor: pointer;
+  }
+  [over]{
+    border-radius: .5em;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  input{
+    padding:.5em 1em;
+    outline:none;
+    box-shadow:0 0 0 1.5px;
+    font-family:"Nunito", system-ui;
+    font-size:1em;
+    background:var(--back);
+    color:var(--front);
+    border:none;
+    border-radius:.5em;
+  }
+  content{
+    overflow:auto;
+    flex:1;
+  }
+  body{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    margin:0;
+    padding:.5em;
+    user-select:none;
+  }
+  h1{font-size:1.5em}
+  h2{font-size:1.25em}
+  h3{font-size:1.125em}
+  h4,h5,h6{font-size:1em}
+  [parent-hover] [hover-show] { opacity: 0; }
+  [parent-hover]:hover [hover-show] { opacity: 1; }
+  [contenteditable]{
+    white-space: pre-line;
+    outline: 1.5px solid;
+    outline-offset: -2px;
+    border-radius: .5em;
+  }
+  a{
+    color:#4AF;
+  }
+</style>
+
+
+<content spellcheck="false"></content>
+<div flex-x center gap>
+  <div change-icon over down padding documenter-icon="waiting"></div>
+  <input space id="text" placeholder="..............." spellcheck="false" onkeydown="if(event.keyCode==13 && event.shiftKey==false) Create();">
+  <div over down padding documenter-icon="plus" onclick="Create()"></div>
+</div>
+
+<script>
+  documenter.on("click","[change-icon]",function(){
+    let val = this.getAttribute("documenter-icon");
+    let order = ["waiting","success","update","error"]
+    let index = order.indexOf(val)
+    let newIcon =  order[ (index+1)%order.length ]
+    this.innerHTML = documenter.icons[ newIcon ] 
+    this.setAttribute("documenter-icon",newIcon)
+  })
+
+  function Create(){
+    let icon = $("[change-icon]").getAttribute("documenter-icon")
+    let text = $("#text").value
+    APP.up("<post/add",{text:JSON.stringify({icon,text})})
+    $("#text").value=""
+  }
+
+  function Delete(id){
+    APP.up("<post/del",{post_id:id})
+  }
+
+  documenter.on("click",'[documenter-icon="edit"]',function(e){
+    if($("[contenteditable]")){
+      $("[contenteditable]").innerHTML = documenter.markdown($("[contenteditable]").innerHTML)
+      return $("[contenteditable]").removeAttribute("contenteditable")
+    }
+
+    this.prev.setAttribute("contenteditable","true")
+    this.prev.innerHTML = xss(JSON.parse( htmlRevert(posts[parseInt(this.parent.getAttribute('post-id'))].text) ).text)
+    this.prev.focus()
+    this.prev.onkeydown = (event)=>{
+      if(event.keyCode==13 && event.shiftKey==false){
+        APP.up("<post/set",{post_id:parseInt(this.parent.getAttribute('post-id')),text:JSON.stringify({text:this.prev.innerText,icon:this.prev.prev.getAttribute('documenter-icon')})})
+        event.preventDefault()
+        this.prev.removeAttribute("contenteditable")
+      }
+    }
+  })
+
+  documenter.on("click",'[post-id] [change-icon][documenter-icon]',function(){
+    let post_id = parseInt(this.parent.getAttribute('post-id'))
+    let text    = JSON.parse( htmlRevert( posts[post_id].text ) ).text
+    APP.up("<post/set",{post_id:post_id,text:JSON.stringify({text:text,icon:this.getAttribute('documenter-icon')})})
+  })
+
+  documenter.on("click","a[href]",function(e){
+    window.open(this.href,"_blank")
+    e.preventDefault()
+  })
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  const Button = {}
+  Button.loader = function(el,action){
+    Button.loading(el)
+    action.then(e=>{
+      Button.success(el)
+    })
+  }
+  Button.loading = function(button){
+    if(button._innerHTML==null) button._innerHTML = button.innerHTML
+    button.classList.add("loading")
+  }
+  Button.success = function(el){
+    if(!el._innerHTML) el._innerHTML = el.innerHTML;
+    el.style.width = el.offsetWidth + "px";
+    el.style.textAlign = "center"
+    el.innerHTML = "✔"
+    el.classList.remove("loading")
+    setTimeout(e=>{
+      el.innerHTML = el._innerHTML
+      el.style.width = null;
+    },1000)
+  }
+</script>
+<style>
+  button.loading, .button.loading,[button].loading,.loading{
+    color: transparent!important;
+    position: relative;
+  }
+
+  .loading > *{
+    visibilty:hidden;
+  }
+
+  button.loading:after, .button.loading:after, [button].loading:after,.loading:after{
+    content:"";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1em;
+    height: 1em;
+    border-radius: 100%;
+    border:2px solid var(--front);
+    clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%);
+    animation: spin 0.8s linear infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+</style>
