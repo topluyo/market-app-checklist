@@ -86,7 +86,7 @@ APP.on(">post/list+", function(post){
 })
 
 APP.on(">post/list", function(posts){
-  posts.map(post=>CreateOrChange(post))
+  posts.data.map(post=>CreateOrChange(post))
 })
 
 APP.on(">post/list-",function(id){
