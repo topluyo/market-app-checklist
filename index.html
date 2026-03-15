@@ -82,7 +82,7 @@ function CreateOrChange(post){
 }
 
 APP.on(">post/list+", function(post){
-  CreateOrChange(post)
+  CreateOrChange(post.data)
 })
 
 APP.on(">post/list", function(posts){
