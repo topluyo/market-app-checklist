@@ -83,7 +83,7 @@ function CreateOrChange(post){
 
 APP.up("<post/list")
 
-APP.on(">post/list+", function(post){
+APP.on(">post/list+", function(response){
   let post = response.data
   CreateOrChange(post)
 })
