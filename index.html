@@ -84,15 +84,18 @@ function CreateOrChange(post){
 APP.up("<post/list")
 
 APP.on(">post/list+", function(post){
-  CreateOrChange(post.data)
+  let post = response.data
+  CreateOrChange(post)
 })
 
-APP.on(">post/list", function(posts){
-  posts.data.map(post=>CreateOrChange(post))
+APP.on(">post/list", function(response){
+  let posts = response.data
+  posts.map(post=>CreateOrChange(post))
 })
 
 APP.on(">post/list-",function(response){
-  $("[post-id='"+response.id+"']").remove()
+  let id = response.data
+  $("[post-id='"+id+"']")?.remove()
 })
 
 </script>
