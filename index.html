@@ -61,7 +61,6 @@ function htmlRevert(str) {
 }
 
 
-APP.up("<post/list")
 
 let posts = {}
 function CreateOrChange(post){
@@ -81,6 +80,9 @@ function CreateOrChange(post){
   }
 }
 
+
+APP.up("<post/list")
+
 APP.on(">post/list+", function(post){
   CreateOrChange(post.data)
 })
@@ -89,8 +91,8 @@ APP.on(">post/list", function(posts){
   posts.data.map(post=>CreateOrChange(post))
 })
 
-APP.on(">post/list-",function(id){
-  $("[post-id='"+id+"']").remove()
+APP.on(">post/list-",function(response){
+  $("[post-id='"+response.id+"']").remove()
 })
 
 </script>
